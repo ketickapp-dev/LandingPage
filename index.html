@@ -4,36 +4,253 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pemasangan CCTV Tiandy | DB SMARTHOME & SECURITY</title>
-    <!-- Tailwind CSS CDN untuk kelajuan loading -->
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js untuk fungsi interaktif (FAQ, Timer) tanpa kod leceh -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- AOS CSS untuk animasi tatalan -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Sembunyikan scrollbar untuk bahagian slider testimoni */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+
+    <!-- ========================================== -->
+    <!-- META PIXEL CODE (Tampal kod FB Pixel di sini) -->
+    <!-- ========================================== -->
+    <!-- Sila letak skrip Meta Pixel anda di ruangan ini untuk penjejakan FB Ads -->
 </head>
-<body class="bg-slate-900 text-slate-300 antialiased">
+<body class="bg-slate-900 text-slate-300 antialiased overflow-x-hidden pt-16">
     
-    <!-- Bahagian Atas (Hero Section) -->
-    <header class="container mx-auto px-6 py-16 md:py-24 text-center">
+    <!-- 1. Sticky Header -->
+    <nav class="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-b border-slate-800 z-50 transition-all">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-white font-bold text-lg tracking-wide">
+                DB SMARTHOME
+            </div>
+            <a href="#hubungi" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-5 rounded-md transition-colors">
+                Sebut Harga
+            </a>
+        </div>
+    </nav>
+
+    <!-- 2. Bahagian Atas (Hero Section) -->
+    <header class="container mx-auto px-6 py-16 md:py-24 text-center" data-aos="fade-up" data-aos-duration="1000">
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Tingkatkan Tahap Keselamatan Premis Anda dengan <span class="text-blue-500">Teknologi Tiandy</span>
+            Tingkatkan Keselamatan Premis Anda dengan <span class="text-blue-500">Teknologi Tiandy</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Lupakan sistem analog lama yang kabur dan berselirat. Beralih kepada rakaman yang lebih tajam, pintar, dan kemas.
         </p>
         
-        <!-- Ruangan Gambar Utama (Gantikan dengan gambar NVR & Kamera Tiandy) -->
-        <div class="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden mb-12 border border-slate-700 shadow-2xl">
+        <div class="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden mb-12 border border-slate-700 shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
             <div class="bg-slate-800 aspect-video flex items-center justify-center">
                 <span class="text-slate-500">[ Sila Letak Gambar NVR & Kamera Tiandy Di Sini ]</span>
             </div>
         </div>
-        
-        <a href="#hubungi" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg py-4 px-8 rounded-lg shadow-lg shadow-blue-500/30 transition-all duration-300">
-            Dapatkan Sebut Harga Sekarang
-        </a>
     </header>
 
+    <!-- 3. Bahagian Urgency (Countdown Timer) -->
+    <section class="bg-blue-600 py-6 border-y border-blue-500" data-aos="fade-up">
+        <div class="container mx-auto px-6 text-center" x-data="countdownTimer()">
+            <p class="text-white font-semibold text-lg mb-2">Tawaran Khas Pemasangan Percuma Berakhir Dalam:</p>
+            <div class="flex justify-center gap-4 text-white font-bold text-2xl md:text-3xl">
+                <div class="flex flex-col"><span x-text="days" class="bg-slate-900/50 px-4 py-2 rounded-lg">00</span><span class="text-xs mt-1 font-normal">Hari</span></div>
+                <div class="flex flex-col"><span x-text="hours" class="bg-slate-900/50 px-4 py-2 rounded-lg">00</span><span class="text-xs mt-1 font-normal">Jam</span></div>
+                <div class="flex flex-col"><span x-text="minutes" class="bg-slate-900/50 px-4 py-2 rounded-lg">00</span><span class="text-xs mt-1 font-normal">Minit</span></div>
+                <div class="flex flex-col"><span x-text="seconds" class="bg-slate-900/50 px-4 py-2 rounded-lg">00</span><span class="text-xs mt-1 font-normal">Saat</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Bahagian Infografik & Kelebihan -->
+    <section class="bg-slate-800/50 py-16">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl font-bold text-center text-white mb-12" data-aos="fade-up">Kenapa Pilih Sistem IP Tiandy?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Kelebihan POE vs Analog</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pemasangan jauh lebih kemas. Satu kabel sahaja untuk kuasa dan video, tiada lagi masalah gangguan isyarat.</p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Rakaman Tajam & Fokus</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pilihan lensa fleksibel untuk liputan pandangan yang lebih luas atau fokus yang lebih mendalam dan terperinci.</p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Mikrofon Terbina (Built-in)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Dengar dan lihat serentak. Tidak perlu model spesifik dengan harga tinggi semata-mata untuk sokongan audio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Bahagian Jaminan Kuat -->
+    <section class="py-16">
+        <div class="container mx-auto px-6 max-w-3xl text-center" data-aos="zoom-in">
+            <div class="bg-slate-800 border border-slate-700 p-10 rounded-2xl relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
+                
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 relative z-10">Jaminan Ketenangan Minda</h2>
+                <div class="text-5xl md:text-6xl font-extrabold text-blue-500 mb-6 relative z-10">3 Tahun Warranty</div>
+                <p class="text-2xl text-slate-200 font-semibold mb-2 relative z-10">Polisi Tukar 1-Ke-1</p>
+                <p class="text-slate-400 mt-2 text-base relative z-10">Rosak? Kami ganti terus unit baharu tanpa banyak soal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Social Proof / Hasil Kerja (Slider) -->
+    <section class="bg-slate-900 py-16 border-t border-slate-800">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-8" data-aos="fade-up">Kekemasan Pemasangan Kami</h2>
+            <div class="flex overflow-x-auto gap-6 pb-8 no-scrollbar snap-x" data-aos="fade-up" data-aos-delay="100">
+                <!-- Gambar 1 -->
+                <div class="shrink-0 w-72 h-48 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center snap-center">
+                    <span class="text-slate-500 text-sm">[ Gambar Pemasangan 1 ]</span>
+                </div>
+                <!-- Gambar 2 -->
+                <div class="shrink-0 w-72 h-48 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center snap-center">
+                    <span class="text-slate-500 text-sm">[ Gambar Pemasangan 2 ]</span>
+                </div>
+                <!-- Gambar 3 -->
+                <div class="shrink-0 w-72 h-48 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center snap-center">
+                    <span class="text-slate-500 text-sm">[ Gambar Pemasangan 3 ]</span>
+                </div>
+                <!-- Gambar 4 -->
+                <div class="shrink-0 w-72 h-48 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center snap-center">
+                    <span class="text-slate-500 text-sm">[ Gambar Pemasangan 4 ]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ (Soalan Lazim) dengan Alpine.js -->
+    <section class="py-16 bg-slate-800/30 border-t border-slate-800">
+        <div class="container mx-auto px-6 max-w-3xl" x-data="{ activeAccordion: null }">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-10" data-aos="fade-up">Soalan Lazim (FAQ)</h2>
+            
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                <!-- Soalan 1 -->
+                <div class="border border-slate-700 rounded-lg overflow-hidden">
+                    <button @click="activeAccordion = activeAccordion === 1 ? null : 1" class="w-full flex justify-between items-center p-5 bg-slate-800 text-white font-semibold text-left focus:outline-none">
+                        Berapa lama masa diambil untuk pemasangan?
+                        <svg class="w-5 h-5 transform transition-transform" :class="activeAccordion === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="activeAccordion === 1" x-collapse class="p-5 bg-slate-800/50 text-slate-400 text-sm">
+                        Bergantung kepada bilangan kamera dan jenis premis. Secara purata, pemasangan standard untuk 4 unit kamera mengambil masa sekitar separuh hari untuk disiapkan dengan kemas.
+                    </div>
+                </div>
+
+                <!-- Soalan 2 -->
+                <div class="border border-slate-700 rounded-lg overflow-hidden">
+                    <button @click="activeAccordion = activeAccordion === 2 ? null : 2" class="w-full flex justify-between items-center p-5 bg-slate-800 text-white font-semibold text-left focus:outline-none">
+                        Adakah saya boleh pantau CCTV dari telefon bimbit?
+                        <svg class="w-5 h-5 transform transition-transform" :class="activeAccordion === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="activeAccordion === 2" x-collapse class="p-5 bg-slate-800/50 text-slate-400 text-sm">
+                        Ya, pastinya. Sistem Tiandy menyokong tontonan langsung dan ulang tayang terus dari aplikasi pintar di telefon bimbit anda, asalkan ada sambungan internet.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Borang Tangkapan Prospek (Lead Form) & Footer -->
+    <section id="hubungi" class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="container mx-auto px-6 max-w-4xl grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Bahagian Info -->
+            <div data-aos="fade-right">
+                <p class="text-slate-500 mb-2 text-sm uppercase tracking-widest font-semibold">Hubungi Kami Secara Profesional</p>
+                <h3 class="text-3xl font-bold text-white mb-6">DB SMARTHOME & SECURITY</h3>
+                <p class="text-slate-400 mb-8">Tinggalkan butiran anda dan pihak kami akan menghubungi anda dengan segera untuk khidmat nasihat percuma.</p>
+                
+                <a href="https://wa.me/60123456789" target="_blank" class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-semibold text-base py-3 px-6 rounded-lg shadow-lg shadow-green-500/20 transition-all w-full sm:w-auto">
+                    <!-- Ikon WhatsApp -->
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"></path></svg>
+                    WhatsApp Kami Terus
+                </a>
+            </div>
+
+            <!-- Bahagian Borang -->
+            <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-xl" data-aos="fade-left">
+                <!-- Tindakan borang boleh disambungkan ke Web3Forms (percuma) -->
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-1">Nama Penuh</label>
+                        <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="Masukkan nama anda">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-1">Nombor Telefon (WhatsApp)</label>
+                        <input type="tel" required class="w-full bg-slate-900 border border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="Cth: 0123456789">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md transition-all shadow-lg mt-2">
+                        Minta Sebut Harga
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 9. Butang WhatsApp Terapung (Floating Button) -->
+    <a href="https://wa.me/60123456789" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:bg-green-600 hover:scale-110 transition-all z-50 animate-bounce">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"></path></svg>
+    </a>
+
+    <!-- Scripts Khusus -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Memulakan Animasi Tatalan (AOS)
+        AOS.init({
+            once: true, // Animasi berlaku sekali sahaja bila ditatal
+            offset: 100, // Mula animasi 100px sebelum elemen kelihatan
+        });
+
+        // Logik untuk Countdown Timer
+        function countdownTimer() {
+            return {
+                days: '00', hours: '00', minutes: '00', seconds: '00',
+                endTime: new Date().getTime() + (3 * 24 * 60 * 60 * 1000), // Tetapkan timer 3 Hari dari sekarang untuk demo
+                init() {
+                    setInterval(() => {
+                        let now = new Date().getTime();
+                        let distance = this.endTime - now;
+                        
+                        if (distance < 0) {
+                            this.endTime = now + (3 * 24 * 60 * 60 * 1000); // Ulang timer bila habis
+                        }
+
+                        this.days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                        this.hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                        this.minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                        this.seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+                    }, 1000);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
     <!-- Bahagian Infografik & Kelebihan -->
     <section class="bg-slate-800/50 py-16 border-y border-slate-800">
         <div class="container mx-auto px-6 max-w-5xl">
